@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "./Repositories/CourseRepository.php";
 class CourseController extends BaseController
 {
