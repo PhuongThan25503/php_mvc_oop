@@ -96,14 +96,22 @@
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
                 <div class="user">
+                    <?php
+                    if ($user instanceof UserModel) {
+                        echo
+                        '<div class="header__account">
+                            <a href="login.html" class="header__account-login">Xin chào ' . $user->getUserName() . '</a>
+                        </div>';
+                    }
+                    ?>
                     <img src="/Views/anh/customer01.jpg" alt="">
                 </div>
             </div>
-        <!-- ========================= Content start here ==================== -->
+            <!-- ========================= Content start here ==================== -->
             <div class="welcome">
                 <img src="/Views/anh/Welcome.png" alt="">
             </div>
-    </div>
+        </div>
     </div>
     <!-- =========== Scripts =========  -->
     <script src="/Views/main.js"></script>

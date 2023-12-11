@@ -21,14 +21,18 @@ class AdminController extends BaseController
 
   public function index()
   {
-    $action = $_GET["action"];
+    if (isset($_GET["action"])) {
+      $action = $_GET["action"];
+    } else {
+      $action = ""; // or some default value
+    }
     $this->doGet($action);
 
     //get data of courses
     $data["course_list"] = $this->courseRepository->getAllCourses($this->courseNameFilter, $this->teacherNameFilter, $this->subjectFilter, $this->gradeFilter);
 
     //get data of subject
-    $data["subject_list"] = $this->subjectRepository->getAllSubject(); 
+    $data["subject_list"] = $this->subjectRepository->getAllSubject();
 
     //go to view, pass data to view
     $this->view("admin_courselist", $data);
@@ -37,12 +41,15 @@ class AdminController extends BaseController
   public function doGet($action)
   {
     switch ($action) {
-      case "delete": $this->delete($_GET["course_id"]);
-      break;
-      default: return;
-      }
+      case "delete":
+        $this->delete($_GET["course_id"]);
+        break;
+      default:
+        return;
     }
+  }
 
+  //handle post request
   public function doPost($method)
   {
     switch ($method) {
@@ -59,12 +66,12 @@ class AdminController extends BaseController
         $this->filter($this->courseNameFilter, $this->teacherNameFilter, $this->subjectFilter, $_POST["grade_filter"]);
         break;
       case "create_new_course":
-        $this->createNewCourse($_POST["c_name"],$_POST["c_teacher"],$_POST["c_price"], $_POST["c_desc"], $_POST["c_subject"], $_POST["c_grade"]);
+        $this->createNewCourse($_POST["c_name"], $_POST["c_teacher"], $_POST["c_price"], $_POST["c_desc"], $_POST["c_subject"], $_POST["c_grade"]);
         break;
       case "update_course_status":
         $this->updateCourseStatus($_POST["course_id"], $_POST["course_status"]);
         break;
-      default: 
+      default:
         return;
     }
   }
@@ -84,7 +91,8 @@ class AdminController extends BaseController
     return $this->index();
   }
 
-  public function updateCourseStatus($course_id, $course_status){
+  public function updateCourseStatus($course_id, $course_status)
+  {
     $status = $course_status == 'on' ? true : false;
     $this->courseRepository->updateCourseStatusById($course_id, $status);
     return $this->index();
@@ -99,7 +107,8 @@ class AdminController extends BaseController
     return $this->index();
   }
 
-  public function delete($course_id){
+  public function delete($course_id)
+  {
     $this->courseRepository->delete($course_id);
   }
 }

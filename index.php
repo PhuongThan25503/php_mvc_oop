@@ -7,6 +7,6 @@ require_once "./core/BaseController.php";
 require_once "./core/DB.php";
 
 
-$controllerName = ucfirst($_REQUEST['controller']?? 'Login'). 'Controller';
+$controllerName = ucfirst($_REQUEST['controller']?? 'Course'). 'Controller';
 
 require_once "./Controllers/${controllerName}.php";
