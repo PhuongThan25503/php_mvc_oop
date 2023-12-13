@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 // How controllers call Views & Models
 require_once "./core/BaseController.php";
 

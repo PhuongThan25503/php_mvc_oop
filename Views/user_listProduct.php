@@ -69,7 +69,7 @@
                                             echo 
                                             '<div class="col l-2 m-4 s-6">
                                                 <div class="product">
-                                                    <div class="product__avt" style="background-image: url(../Views/assets/img/product/product1.jpg);">
+                                                    <div class="product__avt" style="background-image: url('.$course->getCourseImage().');">
                                                     </div>
                                                     <div class="product__info">
                                                         <h3 class="product__name">'.$course->getCourseName().'</h3>
@@ -79,7 +79,7 @@
                                                             <div class="price__new">'.$course->getCoursePrice().' <span class="price__unit">đ</span></div>
                                                         </div>
                                                     </div>
-                                                    <a href="user_product.html" class="viewDetail">Xem chi tiết</a>
+                                                    <a href="/index?controller=courseDetail&course_id='.$course->getCourseId().'" class="viewDetail">Xem chi tiết</a>
                                                 </div>
                                             </div>';
                                         }
