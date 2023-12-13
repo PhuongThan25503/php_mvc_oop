@@ -162,21 +162,6 @@
                                     </div>
                                 </form>
                             </div>
-                            <!-- <script>
-                                var selectSubject = document.getElementById("subject");
-                                selectSubject.addEventListener("change", function() {
-                                    var subject_id = selectSubject.value;
-                                    var xhr = new XMLHttpRequest();
-                                    xhr.open("POST", "/index.php?controller=adminCourseList", true);
-                                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                                    xhr.onreadystatechange = function() {
-                                        if (xhr.readyState === 4 && xhr.status === 200) {
-                                            // Handle the response from the server
-                                        }
-                                    };
-                                    xhr.send("subject_id=" + encodeURIComponent(subject_id) + "&method=" + encodeURIComponent('subject_filter'));
-                                });
-                            </script> -->
                             <div class="col-md-3">
                                 <form action="/index.php?controller=adminCourseList" method="post" class="form-group" class="form-group">
                                     <input hidden="true" type="text" name="method" value="grade_filter" class="form-control" id="grade">
@@ -187,7 +172,7 @@
                                             <option value="">-- chọn khối --</option>
                                             <option value="10">10</option>
                                             <option value="11">11</option>
-                                            <option value="12">12</option>  
+                                            <option value="12">12</option>
                                         </select>
                                         <div class="input-group-append">
                                             <button type="submit" class="btn btn-primary">Search</button>
@@ -316,7 +301,15 @@
                                         <!-- <select id="grade" name="grade">
                                             <option disabled selected>Select grade</option>
                                         </select> -->
-                                        <input type="number" class="form-control" id="c_grade" name="c_grade" required>
+                                        <div class="input-group">
+                                            <!-- <input type="number" name="grade_filter" class="form-control" id="grade"> -->
+                                            <select name="c_grade" class="form-control" id="subject">
+                                                <option value="">-- chọn khối --</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <!-- hết lựa chọn cho grade -->
                                     <div class="form-group">

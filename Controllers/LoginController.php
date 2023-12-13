@@ -43,7 +43,7 @@ class LoginController extends BaseController
       $a = $user;
       $_SESSION["user"] = $user;
       if ($user->getUserRole() == 0) {
-        require('CourseController.php');
+        require('HomeController.php');
       } else if ($user->getUserRole() == 1) {
         require('AdminController.php');
       }

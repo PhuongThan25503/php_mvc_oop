@@ -77,14 +77,14 @@ session_start();
                 </ul>
             </li>
             <li class="header__nav-item index">
-                <a href="/Views/user_homepage.php" class="header__nav-link">Trang chủ</a>
+                <a href="/index?controller=home" class="header__nav-link">Trang chủ</a>
             </li>
             <li class="header__nav-item">
                 <a href="/Views/user_about.php" class="header__nav-link">Giới Thiệu</a>
             </li>
             <li class="header__nav-item">
                 <a href="/index?controller=course" class="header__nav-link">Khóa học</a>
-                <div class="sub-nav-wrap grid wide">
+                <!-- <div class="sub-nav-wrap grid wide">
                     <ul class="sub-nav">
                         <li class="sub-nav__item">
                             <a href="" class="sub-nav__link heading">Lớp</a>
@@ -159,7 +159,7 @@ session_start();
                         </li>
                     </ul>
 
-                </div>
+                </div> -->
             </li>
 
             <li class="header__nav-item">
