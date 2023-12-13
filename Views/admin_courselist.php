@@ -182,7 +182,13 @@
                                     <input hidden="true" type="text" name="method" value="grade_filter" class="form-control" id="grade">
                                     <label for="grade">Grade:</label>
                                     <div class="input-group">
-                                        <input type="number" name="grade_filter" class="form-control" id="grade">
+                                        <!-- <input type="number" name="grade_filter" class="form-control" id="grade"> -->
+                                        <select name="grade_filter" class="form-control" id="subject">
+                                            <option value="">-- chọn khối --</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>  
+                                        </select>
                                         <div class="input-group-append">
                                             <button type="submit" class="btn btn-primary">Search</button>
                                         </div>
